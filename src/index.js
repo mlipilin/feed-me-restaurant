@@ -4,11 +4,11 @@ import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 
-window.renderRestaurant = (containerId) => {
-  console.log('renderRestaurant', { containerId })
+window.renderRestaurant = (containerId, history) => {
+  console.log('renderRestaurant', { containerId, history })
   ReactDOM.render(
     <React.StrictMode>
-      <App />
+      <App history={history} />
     </React.StrictMode>,
     document.getElementById(containerId)
   )
