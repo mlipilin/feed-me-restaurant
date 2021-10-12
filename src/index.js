@@ -5,7 +5,7 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 
 window.renderRestaurant = (containerId, history) => {
-  console.log('renderRestaurant', { containerId, history })
+  // console.log('renderRestaurant', { containerId, history })
   ReactDOM.render(
     <React.StrictMode>
       <App history={history} />
@@ -16,6 +16,12 @@ window.renderRestaurant = (containerId, history) => {
 }
 
 window.unmountRestaurant = (containerId) => {
-  console.log('unmountRestaurant', { containerId })
-  ReactDOM.unmountComponentAtNode(document.getElementById(containerId))
+  console.log('unmountRestaurant', {
+    containerId,
+    containerIdNode: document.getElementById(containerId),
+  })
+  const unmounted = ReactDOM.unmountComponentAtNode(
+    document.getElementById(containerId)
+  )
+  return unmounted
 }
